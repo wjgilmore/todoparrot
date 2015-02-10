@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace Todoparrot\Events;
 
 abstract class Event {
 

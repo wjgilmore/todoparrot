@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Todoparrot\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Todoparrot\Http\Requests;
+use Todoparrot\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
