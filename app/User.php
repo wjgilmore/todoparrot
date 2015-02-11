@@ -6,6 +6,8 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+use Todoparrot\Todolist;
+
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
 	use Authenticatable, CanResetPassword;
@@ -37,7 +39,26 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	*/
 	public function lists()
 	{
-	  return $this->hasMany('Todoparrot\Todolist');
+		return $this->hasMany('Todoparrot\Todolist');
+	}
+
+	/**
+	 * Determines if the user owns a particular list
+	 * @param  integer $listId
+	 * @return Boolean
+	 */
+	public function owns($listId)
+	{
+
+		$list = Todolist::find($listId);
+
+		if ($list->user_id == $this->id)
+		{
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 }
