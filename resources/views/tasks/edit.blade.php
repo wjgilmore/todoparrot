@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="col-md-6">
-{!! Form::model($task, array('route' => array('lists.tasks.update', $task->todolist->id), 'class' => 'form')) !!}
+{!! Form::model($task, array('method' => 'put', 
+    'route' => array('lists.tasks.update', $task->todolist->id, $task->id), 'class' => 'form')) !!}
 
-<h2>Edit a Task ({{ $task->todolist->name }})</h2>
+<h2>Edit a Task (<a href="{{ URL::route('lists.show', $task->todolist->id) }}">{{ $task->todolist->name }}</a>)</h2>
 
 <ul>
     @foreach($errors->all() as $error)

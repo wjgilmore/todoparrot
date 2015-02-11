@@ -10,10 +10,10 @@ Last modified: {{ date('F d, Y', strtotime($list->updated_at)) }}<br />
 {{ $list->description }}
 </p>
 
-<h3>Tasks</h3>
+<h2>Tasks</h2>
 
 <p>
-<a href="/lists/{{$list->id}}/tasks/create" class='btn btn-primary'>Add a task</a>
+<a href="{{ URL::route('lists.tasks.create', $list->id) }}" class='btn btn-primary'>Add a task</a>
 </p>
 
 @if($list->tasks->count() == 0)
@@ -30,9 +30,9 @@ No tasks assigned to this list. <a href="/lists/{{$list->id}}/tasks/create">Add 
       <tr>
         <td>
         @if($task->done)
-          <del><a href="{{ URL::route('lists.tasks.show', [$list->id, $task->id]) }}">{{ $task->name }}</a></del>
+          <del><a href="{{ URL::route('lists.tasks.edit', [$list->id, $task->id]) }}">{{ $task->name }}</a></del>
         @else
-          <a href="{{ URL::route('lists.tasks.show', [$list->id, $task->id]) }}">{{ $task->name }}</a>
+          <a href="{{ URL::route('lists.tasks.edit', [$list->id, $task->id]) }}">{{ $task->name }}</a>
         @endif
         </td>
         <td style="text-align: right;">

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-6">
-{!! Form::model($list, array('route' => 'lists.update', 'class' => 'form')) !!}
+{!! Form::model($list, array('method' => 'put', 'route' => ['lists.update', $list->id], 'class' => 'form')) !!}
     
 <h2>Update a TODO List</h2>
 
