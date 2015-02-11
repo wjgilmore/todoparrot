@@ -18,7 +18,7 @@
        </p>
       @endforeach
 
-    {!! $lists->links() !!}
+    {!! $lists->render() !!}
 
     @else
      <p>
