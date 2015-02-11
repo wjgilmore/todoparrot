@@ -60,34 +60,6 @@ h1 .page-title {
   text-decoration: none;
 }
 
-// Credit to http://www.bootply.com/106743 for helping me
-// sort out the eternally annoying bottom navbar issue in
-// Bootstrap.
-
-#bottomNav {
-  padding: 10px;
-}
-
-#bottomNav a {
-  font-size: 12pt;
-  color: #ddd;
-  text-decoration: none;
-}
-
-#bottomNav a:hover {
-  color: #fff;
-}
-
-.list-group-item {
-  padding-left: 0px;
-}
-
-#book {
-  float: left;
-  border: 1px solid black;
-  margin-right: 3px;
-}
-
-@-moz-document url-prefix() {
-    fieldset { display: table-cell; }
+.navbar-left {
+  padding-left: 10px;
 }
