@@ -5,12 +5,26 @@ use Todoparrot\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Todoparrot\Todolist;
+use Todoparrot\User;
+use Todoparrot\Task;
+use Todoparrot\Http\Requests\TaskCreateFormRequest;
+
 class TasksController extends Controller {
 
     /**
+     * Make sure the user is authenticated.
+     * 
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Present the form used to create a new task
-     * GET /tasks/create
-     *
+     * 
+     * @param integer $listId The candidate task's parent list ID
      * @return Response
      */
     public function create($listId)
@@ -21,8 +35,9 @@ class TasksController extends Controller {
 
     /**
      * Save a newly created task
+     * @param  integer $listId The new task's parent list ID
      * @param  TaskCreateFormRequest
-     * @return [type]
+     * @return Response
      */
     public function store($listId, TaskCreateFormRequest $request)
     {
@@ -31,28 +46,30 @@ class TasksController extends Controller {
 
         if ($user->owns($listId)) {
 
-          $list = Todolist::find($listId);
+            $list = Todolist::find($listId);
 
-          if (\Input::get('done') == 'true')
-          {
-            $done = 1;
-            } else {
-              $done = 0;
-            }
+            // if (\Input::get('done') == 'true')
+            // {
+            //     $done = 1;
+            // } else {
+            //     $done = 0;
+            // }
 
-          $task = new Task(array(
-            'name' => \Input::get('name'),
-            'due' => \Input::get('due'),
-            'done' => $done
-          ));
+            $task = new Task(array(
+                'name' => \Input::get('name'),
+                'due' => \Input::get('due'),
+                'done' => true ? \Input::get('done') == 'true' : false
+            ));
 
-          $task = $list->tasks()->save($task);
+            $task = $list->tasks()->save($task);
 
-          return \Redirect::route('lists.show', array($list->id))->with('message', 'Your task has been created!');
+            return \Redirect::route('lists.show', array($list->id))
+                ->with('message', 'Your task has been created!');
 
         } else {
 
-          return \Redirect::route('home')->with('message', 'Authorization error: you do not own this list.');
+            return \Redirect::route('home')
+                ->with('message', 'Authorization error: you do not own this list.');
 
         }
 
