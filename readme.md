@@ -38,6 +38,16 @@ I'm still working on the unit tests however several are already in place. You ca
 
     $ vendor/bin/phpunit
 
+### Frequently Asked Questions
+
+#### Why did you implement ______ this way?
+
+I rebuilt the early test version of TODOParrot over two frenzied afternoons after finishing the book. Some of the code needs to be refactored and can be improved. But most of what you find in the code should nonetheless be pretty helpful in terms of learning more about Laravel.
+
+#### Can I adopt the code for my own purposes?
+
+Yep as long as you abide by the terms of the license.
+
 ### License
 
 TODOParrot is licensed under the [MIT license](http://opensource.org/licenses/MIT). If you find something wrong with the code or think it could be improved, I welcome you to [create an issue](https://github.com/wjgilmore/todoparrot/issues) or submit a pull request!
