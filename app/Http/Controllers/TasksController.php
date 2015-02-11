@@ -29,8 +29,14 @@ class TasksController extends Controller {
      */
     public function create($listId)
     {
-        $list = Todolist::find($listId);
-        return view('tasks.create')->with('list', $list);
+        $user = User::find(\Auth::id());
+        if ($user->owns($listId))
+        {
+            $list = Todolist::find($listId);
+            return view('tasks.create')->with('list', $list);
+        } else {
+            
+        }
     }
 
     /**
