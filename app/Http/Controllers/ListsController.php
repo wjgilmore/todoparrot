@@ -22,11 +22,21 @@ class ListsController extends Controller {
 		return view('lists.index')->withLists($lists);
 	}
 
+	/**
+	* Presents the list creation form
+	*
+	*
+	*/
 	public function create()
 	{
 		return view('lists.create');
 	}
 
+	/**
+	 * Creates a new list
+	 * @param  ListCreateFormRequest
+	 * @return [type]
+	 */
 	public function store(ListCreateFormRequest $request)
 	{
 
@@ -44,6 +54,11 @@ class ListsController extends Controller {
 	
 	}
 
+	/**
+	 * Displays a specific list
+	 * @param  integer
+	 * @return [type]
+	 */
 	public function show($id)
 	{
 
@@ -51,6 +66,11 @@ class ListsController extends Controller {
 		return view('lists.show')->withList($list);
 	}
 
+	/**
+	 * Presents the list edit form
+	 * @param  integer
+	 * @return [type]
+	 */
 	public function edit($id)
 	{
 		//
