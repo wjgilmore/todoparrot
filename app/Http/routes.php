@@ -13,12 +13,16 @@
 
 Route::get('/', ['as' => 'home', 'uses' => 'WelcomeController@index']);
 
-Route::get('home', 'HomeController@index');
+//Route::get('home', 'HomeController@index');
 
 Route::get('about', 'AboutController@index');
 
 Route::resource('lists', 'ListsController');
 
+Route::resource('lists.tasks', 'TasksController');
+
+Route::post('lists/{lists}/tasks/{tasks}/complete', 
+	array('as' => 'complete_task', 'uses' => 'TasksController@complete'));
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
