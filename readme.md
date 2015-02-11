@@ -10,9 +10,7 @@ TODOParrot ([http://todoparrot.com](http://todoparrot.com)) is the companion pro
 * Unit Testing: Some simple test-related examples.
 * Bootstrap Integration: Because I can't even write my own name legibly let alone design a nice website, TODOParrot uses the Bootstrap framework.
 
-TODOParrot is *not a finished product*! I work on the project in conjunction with the examples found in the book.
-
-In the coming days I'll continue to improve TODOParrot as I continue writing and refining the book. In particular I plan on demonstrating the following features:
+TODOParrot is *not a finished product*! I've been using the project as a testing ground for the various Laravel 5 features. With the book now complete I'm currently working on rebuilding TODOParrot to use the official Laravel 5 release. I'll continue to improve TODOParrot as I continue writing and refining the book. In particular I plan on demonstrating the following features:
 
 * Improved form workflow: Streamlining of the form validation process.
 * Database seeding: I'll provide some sample account and list data so you can experiment using a realistic data set. 
