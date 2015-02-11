@@ -48,13 +48,6 @@ class TasksController extends Controller {
 
             $list = Todolist::find($listId);
 
-            // if (\Input::get('done') == 'true')
-            // {
-            //     $done = 1;
-            // } else {
-            //     $done = 0;
-            // }
-
             $task = new Task(array(
                 'name' => \Input::get('name'),
                 'due' => \Input::get('due'),
@@ -94,7 +87,8 @@ class TasksController extends Controller {
      */
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+        return view('tasks.edit')->with('task', $task);
     }
 
     /**
@@ -105,22 +99,41 @@ class TasksController extends Controller {
      */
     public function update($id)
     {
-        //
+
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete a task
      *
      * @param  int  $id
      * @return Response
      */
     public function destroy($id)
     {
-        //
+
+        $user = \Auth::user();
+
+        $task = Task::find($id);
+
+        $list = Todolist::find($task->todolist_id);
+
+        if ($user->owns($list->id)) {
+
+            $task->delete();
+
+            return \Redirect::route('lists.show', [$list->id])
+                ->with('message', 'Task deleted!');
+
+        }
+
     }
 
     /**
     * Toggle task completion
+    *
+    * @param  integer $listId The list ID
+    * @param  integer $taskId The task ID
+    * @return  Response
     *
     */
     public function complete($listId, $taskId)
@@ -133,12 +146,7 @@ class TasksController extends Controller {
 
             $task = $list->tasks()->where('id', '=', $taskId)->first();
 
-            if ($task->done == true)
-            {
-            $task->done = false;
-            } else {
-            $task->done = true;
-            }
+            $task->done = true ? $task->done == true : false
 
             $task->save();
 
@@ -153,5 +161,7 @@ class TasksController extends Controller {
         }
 
     }
+
+
 
 }

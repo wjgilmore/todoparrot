@@ -56,8 +56,8 @@ class ListsController extends Controller {
 
 	/**
 	 * Displays a specific list
-	 * @param  integer
-	 * @return [type]
+	 * @param  integer $id The list ID
+	 * @return Response
 	 */
 	public function show($id)
 	{
@@ -68,12 +68,13 @@ class ListsController extends Controller {
 
 	/**
 	 * Presents the list edit form
-	 * @param  integer
-	 * @return [type]
+	 * @param  integer $id The list ID
+	 * @return Response
 	 */
 	public function edit($id)
 	{
-		//
+        $list = Todolist::find($id);
+        return view('lists.edit')->with('list', $list);
 	}
 
 	public function update($id)
