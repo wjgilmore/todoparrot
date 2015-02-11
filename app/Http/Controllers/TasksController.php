@@ -123,7 +123,7 @@ class TasksController extends Controller {
             ]);
 
             return \Redirect::route('lists.tasks.edit', 
-                array($task->todolist->id, $task->id))->with('message', 'Your list has been updated!');
+                array($task->todolist->id, $task->id))->with('message', 'Your task has been updated!');
 
         } else {
 
@@ -178,7 +178,12 @@ class TasksController extends Controller {
 
             $task = $list->tasks()->where('id', '=', $taskId)->first();
 
-            $task->done = true ? $task->done == true : false;
+            if ($task->done == true) 
+            { 
+                $task->done = false; 
+            } else { 
+                $task->done = true;
+            }
 
             $task->save();
 

@@ -77,14 +77,60 @@ class ListsController extends Controller {
         return view('lists.edit')->with('list', $list);
 	}
 
-	public function update($id)
+	/**
+	 * Update a list
+	 * @param  integer $id The list ID
+	 * @param  ListCreateFormRequest $request The form request object
+	 * @return Response
+	 */
+	public function update($id, ListCreateFormRequest $request)
 	{
-		//
+
+        $user = \Auth::user();
+
+        $list = Todolist::find($id);
+
+        if ($user->owns($list->id))
+        {
+
+            $list->update([
+                'name' => $request->get('name'), 
+                'description' => $request->get('description')
+            ]);
+
+            return \Redirect::route('lists.edit', 
+                array($task->todolist->id))->with('message', 'Your list has been updated!');
+
+        } else {
+
+            return \Redirect::route('lists.index')
+                ->with('message', 'Permissions error!');
+        
+        }  
+
 	}
 
+	/**
+	 * Delete a list
+	 * @param  integer $id The list ID
+	 * @return Response
+	 */
 	public function destroy($id)
 	{
-		//
+
+        $user = \Auth::user();
+
+        $list = Todolist::find($id);
+
+        if ($user->owns($list->id)) {
+
+            $list->delete();
+
+            return \Redirect::route('lists.index')
+                ->with('message', 'Task deleted!');
+
+        }
+
 	}
 
 }
