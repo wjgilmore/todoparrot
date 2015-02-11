@@ -37,7 +37,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	*/
 	public function lists()
 	{
-	  return $this->hasMany('\todoparrot\Todolist');
+	  return $this->hasMany('Todoparrot\Todolist');
 	}
 
 }

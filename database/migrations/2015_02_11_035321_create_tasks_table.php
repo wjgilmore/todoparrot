@@ -15,7 +15,7 @@ class CreateTasksTable extends Migration {
 		Schema::create('tasks', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('todolist_id')->unsigned();;
+			$table->integer('todolist_id')->unsigned();
 			$table->text('name');
 			$table->date('due');
 			$table->boolean('done');
