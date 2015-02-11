@@ -18,8 +18,8 @@ class ListsController extends Controller {
 
 	public function index()
 	{
-		$list = [];
-		return view('lists.index')->withLists($list);
+		$lists = User::find(\Auth::id())->lists()->orderBy('created_at', 'desc')->paginate(10);
+		return view('lists.index')->withLists($lists);
 	}
 
 	public function create()
