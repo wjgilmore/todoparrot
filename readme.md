@@ -2,21 +2,29 @@
 
 TODOParrot ([http://todoparrot.com](http://todoparrot.com)) is the companion project to the book, *Easy Laravel 5* ([http://easylaravelbook.com](http://easylaravelbook.com)), written by bestselling author [W. Jason Gilmore](http://wjgilmore.com). Feel free to use this companion project as a learning aide; if you'd like to additionally take advantage of the book now you purchase it via [EasyLaravelBook.com](http://easylaravelbook.com), and receive free updates for life!
 
-* Blade Templating: A simple master layout is used. Nothing new here but a useful example for Laravel newbies.
+### Useful Features for Laravel Newbies 
+
+If you're new to Laravel I suggest paying particular attention to the following features:
+
+* Blade Templating: A simple master layout is used. Nothing new here but a useful example nonetheless.
 * Model Relations: TODOParrot users can have many lists, and each list can have many tasks. These relations have been integrated into the models.
 * Forms Integration: The new Laravel 5 Form Request feature is used for creating new lists and tasks. 
 * Database Queries: The various implemented queries are pretty basic but should provide Laravel newcomers with a few useful examples.
-* User Authentication: TODOParrot uses the new Laravel 5 authentication generator.
+* Model methods: I added a few helper methods to models to cut down on redundant code.
+* User Authentication: TODOParrot uses the sweet new Laravel 5 authentication features.
 * Unit Testing: Some simple test-related examples.
 * Bootstrap Integration: Because I can't even write my own name legibly let alone design a nice website, TODOParrot uses the Bootstrap framework.
 
-TODOParrot is *not a finished product*! I've been using the project as a testing ground for the various Laravel 5 features. With the book now complete I'm currently working on rebuilding TODOParrot to use the official Laravel 5 release. I'll continue to improve TODOParrot as I continue writing and refining the book. In particular I plan on demonstrating the following features:
+### TODOParrot is Not Production Ready
+
+TODOParrot is *not a finished product*! I've been using the project as a testing ground for the various Laravel 5 features while writing *Easy Laravel 5*. Now that the book is published I've spent the last two days completely rewriting the code from the ground up. Future versions will include:
 
 * Route model binding: Route model binding is a much cleaner way to handle boilerplate tasks.
 * Much more testing: Plenty to do here
 * Additional account features: Account confirmation and password recovery, to name a few features.
 * User preferences: I'd like to add some simple customization capabilities such as e-mail notification when a task date expires.
 * An administration console: The console would allow administrators to view all user accounts and lists.
+* E-mail task due date reminders: Would e-mail users when a task due date nears.
 
 ### Installing TODOParrot
 
@@ -57,6 +65,10 @@ Yep as long as you abide by the terms of the license.
 #### Can I ask you questions?
 
 Yep. E-mail me at wj@wjgilmore.com.
+
+#### Your code is just plain wrong
+
+That doesn't surprise me one bit. Send me a pull request.
 
 ### License
 
