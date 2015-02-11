@@ -24,4 +24,10 @@ TODOParrot is built atop Laravel 5 with the intent of giving fellow coders the o
 TODOParrot is released under the MIT license. You can download TODOParrot on GitHub. Found a bug or a better way to do something? File an issue or submit a pull request!
 </p>
 
+<h2>Credits</h2>
+
+<p>
+The cool navbar background is Simple Dashed (created by <a href="http://venam.1.ai/">Venam</a>), and hosted on <a href="http://subtlepatterns.com/simple-dashed/">Subtle Patterns</a>. Licensed via <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">CC BY-SA 3.0</a>.
+</p>
+
 @endsection

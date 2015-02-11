@@ -56,6 +56,12 @@ h1 .page-title {
   text-decoration: none;
 }
 
+.navbar {
+  background: url(/images/simple_dashed.png) repeat; 
+  background-size: auto, cover;
+  border-bottom: 1px solid black;
+}
+
 .navbar-brand {
   text-decoration: none;
 }
