@@ -48,6 +48,10 @@ I rebuilt the early test version of TODOParrot over two frenzied afternoons afte
 
 Yep as long as you abide by the terms of the license.
 
+#### Can I ask you questions?
+
+Yep. E-mail me at wj@wjgilmore.com.
+
 ### License
 
 TODOParrot is licensed under the [MIT license](http://opensource.org/licenses/MIT). If you find something wrong with the code or think it could be improved, I welcome you to [create an issue](https://github.com/wjgilmore/todoparrot/issues) or submit a pull request!
