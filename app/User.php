@@ -31,4 +31,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	/*
+	* Each user can have one or more lists
+	*
+	*/
+	public function lists()
+	{
+	  return $this->hasMany('\todoparrot\Todolist');
+	}
+
 }
