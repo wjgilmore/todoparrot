@@ -49,9 +49,9 @@ class TasksController extends Controller {
             $list = Todolist::find($listId);
 
             $task = new Task(array(
-                'name' => \Input::get('name'),
-                'due' => \Input::get('due'),
-                'done' => true ? \Input::get('done') == 'true' : false
+                'name' => $request->get('name'),
+                'due' => $request->get('due'),
+                'done' => true ? $request->get('done') == 'true' : false
             ));
 
             $task = $list->tasks()->save($task);
@@ -85,10 +85,20 @@ class TasksController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($listId, $taskId)
     {
-        $task = Task::find($id);
-        return view('tasks.edit')->with('task', $task);
+
+        $user = \Auth::user();
+        $task = Task::find($taskId);
+
+        if ($user->owns($task->todolist->id))
+        {
+            return view('tasks.edit')->with('task', $task);
+        } else {
+            return \Redirect::route('lists.index')
+                ->with('message', 'Permissions error!');
+        }
+
     }
 
     /**
@@ -97,8 +107,30 @@ class TasksController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($listId, $taskId, TaskCreateFormRequest $request)
     {
+        
+        $user = \Auth::user();
+        $task = Task::find($taskId);
+
+        if ($user->owns($task->todolist->id))
+        {
+
+            $task->update([
+                'name' => $request->get('name'), 
+                'due' => $request->get('due'),
+                'done' =>  true ? $request->get('done') == 'true' : false                
+            ]);
+
+            return \Redirect::route('lists.tasks.edit', 
+                array($task->todolist->id, $task->id))->with('message', 'Your list has been updated!');
+
+        } else {
+
+            return \Redirect::route('lists.index')
+                ->with('message', 'Permissions error!');
+        
+        }        
 
     }
 
@@ -108,14 +140,14 @@ class TasksController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($listId, $taskId)
     {
 
         $user = \Auth::user();
 
-        $task = Task::find($id);
+        $task = Task::find($taskId);
 
-        $list = Todolist::find($task->todolist_id);
+        $list = Todolist::find($task->todolist->id);
 
         if ($user->owns($list->id)) {
 
@@ -146,7 +178,7 @@ class TasksController extends Controller {
 
             $task = $list->tasks()->where('id', '=', $taskId)->first();
 
-            $task->done = true ? $task->done == true : false
+            $task->done = true ? $task->done == true : false;
 
             $task->save();
 
