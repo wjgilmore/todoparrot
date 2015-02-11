@@ -12,11 +12,9 @@ TODOParrot ([http://todoparrot.com](http://todoparrot.com)) is the companion pro
 
 TODOParrot is *not a finished product*! I've been using the project as a testing ground for the various Laravel 5 features. With the book now complete I'm currently working on rebuilding TODOParrot to use the official Laravel 5 release. I'll continue to improve TODOParrot as I continue writing and refining the book. In particular I plan on demonstrating the following features:
 
-* Improved form workflow: Streamlining of the form validation process.
-* Database seeding: I'll provide some sample account and list data so you can experiment using a realistic data set. 
+* Route model binding: Route model binding is a much cleaner way to handle boilerplate tasks.
 * Much more testing: Plenty to do here
 * Additional account features: Account confirmation and password recovery, to name a few features.
-* List/task editing: Currently users can only create lists and create/modify tasks. In the very near future I'll add list and task deletion.
 * User preferences: I'd like to add some simple customization capabilities such as e-mail notification when a task date expires.
 * An administration console: The console would allow administrators to view all user accounts and lists.
 
