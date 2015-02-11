@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container-fluid">
@@ -37,7 +37,7 @@
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
-									Send Password Reset Link
+									E-mail Password Reset Link
 								</button>
 							</div>
 						</div>
