@@ -19,6 +19,7 @@ If you're new to Laravel I suggest paying particular attention to the following 
 
 TODOParrot is *not a finished product*! I've been using the project as a testing ground for the various Laravel 5 features while writing *Easy Laravel 5*. Now that the book is published I've spent the last two days completely rewriting the code from the ground up. Future versions will include:
 
+* Less integration with Elixir: In the interests of time I just pushed my pre-existing Bootswatch template directly into `public/css`. Definitely want to take advantage of Elixir.
 * Route model binding: Route model binding is a much cleaner way to handle boilerplate tasks.
 * Much more testing: Plenty to do here
 * Additional account features: Account confirmation and password recovery, to name a few features.
