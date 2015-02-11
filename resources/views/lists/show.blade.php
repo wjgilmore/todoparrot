@@ -5,11 +5,16 @@
 <h1>{{ $list->name }}</h1>
 
 <p>
-Created on: {{ $list->created_at }} Last modified: {{ $list->updated_at }}<br />
+Created on: {{ date('F d, Y', strtotime($list->created_at)) }} <br />
+Last modified: {{ date('F d, Y', strtotime($list->updated_at)) }}<br />
 {{ $list->description }}
 </p>
 
 <h3>Tasks</h3>
+
+<p>
+<a href="/lists/{{$list->id}}/tasks/create" class='btn btn-primary'>Add a task</a>
+</p>
 
 @if($list->tasks->count() == 0)
 
@@ -20,7 +25,7 @@ No tasks assigned to this list. <a href="/lists/{{$list->id}}/tasks/create">Add 
 @else
 
   <div class="table-responsive">
-    <table class="table">
+    <table class="table table-striped">
       @foreach ($list->tasks as $task)      
       <tr>
         <td>
@@ -42,7 +47,7 @@ No tasks assigned to this list. <a href="/lists/{{$list->id}}/tasks/create">Add 
               {!! Form::open(array('route' => array('complete_task', $list->id, $task->id), 'method' => 'post')) !!}
 
                   @if($task->done)
-                  <button type="submit" href="{{ URL::route('complete_task', [$list->id, $task->id]) }}" class="glyphicon glyphicon-repeat" title="Undo"></button>
+                  <button type="submit" href="{{ URL::route('complete_task', [$list->id, $task->id]) }}" class="glyphicon glyphicon-repeat" title="Mark Incomplete"></button>
                   @else
                   <button type="submit" href="{{ URL::route('complete_task', [$list->id, $task->id]) }}" class="glyphicon glyphicon-ok" title="Mark complete"></button>
                   @endif
@@ -61,10 +66,6 @@ No tasks assigned to this list. <a href="/lists/{{$list->id}}/tasks/create">Add 
     </table>
   </div>
 
-<p>
-<a href="/lists/{{$list->id}}/tasks/create" class='btn btn-primary'>Add a task</a>
-</p>
-
 @endif
 
-@stop
+@endsection
