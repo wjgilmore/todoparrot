@@ -3,10 +3,12 @@
 @section('content')
 
 <div class="col-md-12">
-<h1>Your Lists</h1>
+
   <p>
-    <a href="/lists/create">Create a list</a>
+    <a href="/lists/create" class="btn btn-success">Create a New List</a>
   </p>
+
+<h1>Your Lists</h1>
 
   @if (count($lists) > 0)
       @foreach ($lists as $list)
