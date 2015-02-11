@@ -30,9 +30,15 @@ Next, enter the project's root directory and update the project dependencies:
 
     $ composer update
 
-Once complete, fire up the Laravel development server:
+Next, configure your database (`config/database.php`). See Chapter 3 for more details about database configuration. Once complete, create the database and then run the migrations:
 
-    $ php artisan serve
+	$ php artisan migrate
+
+Next, seed the database:
+
+	$ php artisan db:seed
+
+Finally, fire up the PHP development server (`php artisan serve`) or navigate to the appropriate Homestead URL and play around with the application!
 
 I'm still working on the unit tests however several are already in place. You can run them by executing the following command from the project root directory:
 
