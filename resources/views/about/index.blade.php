@@ -30,4 +30,8 @@ TODOParrot is released under the MIT license. You can download TODOParrot on Git
 The cool navbar background is Simple Dashed (created by <a href="http://venam.1.ai/">Venam</a>), and hosted on <a href="http://subtlepatterns.com/simple-dashed/">Subtle Patterns</a>. Licensed via <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">CC BY-SA 3.0</a>.
 </p>
 
+<p>
+Sweet tropical picture taken by little old me, copyright owner W. Jason Gilmore. I think it was taken during trip to Hawaii but it may be Puerto Rico.
+</p>
+
 @endsection
