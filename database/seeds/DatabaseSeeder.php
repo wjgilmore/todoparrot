@@ -14,7 +14,14 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		// Seed the categories table
+
+		DB::table('categories')->delete();
+
+		$this->call('Todoparrot\CategoryTableSeeder');
+
+		// Seed the 
+
 	}
 
 }

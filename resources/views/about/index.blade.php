@@ -1,3 +1,7 @@
+@extends('layouts.master')
+
+@section('content')
+
 <h1>About TODOParrot</h1>
 
 <p>
@@ -19,3 +23,5 @@ TODOParrot is built atop Laravel 5 with the intent of giving fellow coders the o
 <p>
 TODOParrot is released under the MIT license. You can download TODOParrot on GitHub. Found a bug or a better way to do something? File an issue or submit a pull request!
 </p>
+
+@endsection

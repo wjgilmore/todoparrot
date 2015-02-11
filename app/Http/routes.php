@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', ['as' => 'home', 'uses' => 'WelcomeController@index']);
 
 Route::get('home', 'HomeController@index');
 
-Route::resource('about', 'AboutController@index');
+Route::get('about', 'AboutController@index');
+
+Route::resource('lists', 'ListsController');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
