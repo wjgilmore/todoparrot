@@ -6,14 +6,15 @@ TODOParrot ([http://todoparrot.com](http://todoparrot.com)) is the companion pro
 
 If you're new to Laravel I suggest paying particular attention to the following features:
 
-* Blade Templating: A simple master layout is used to wrap the application (`resources/views/layouts/master.blade.php`). Nothing particularly advanced here but a useful example nonetheless.
-* Model Relations: TODOParrot users can have many lists, and each list can have many tasks. These relations have been integrated into the `User`, `Task`, and `Todolist` models.
-* Forms Integration: The new Laravel 5 Form Request feature is used for creating new lists and tasks. Check out for instance how the `app/Http/Controllers/ListsController.php`, `app/Http/Requests/ListCreateFormRequest.php`, and `resources/views/lists/create.blade.php` files work together to add a new list to the database.
-* Eloquent: The eloquent ORM is used to query and manage database data.
-* Model methods: I added a few helper methods to models to cut down on redundant code. For instance, the `Todolist` model includes a `remainingTasks` method used to easily determine how many incomplete tasks remain for a given list.
-* User Authentication: TODOParrot uses the sweet new Laravel 5 authentication features. Users can create a new account, sign in, sign out, and recover their password.
-* Unit Testing: You'll find a few simple test-related examples in the `tests` directory.
-* Bootstrap Integration: TODOParrot uses the Bootstrap framework and a modified [Bootswatch](http://bootswatch.com/) theme.
+* **Blade Templating**: A simple master layout is used to wrap the application (`resources/views/layouts/master.blade.php`). Nothing particularly advanced here but a useful example nonetheless.
+* **Model Relations**: TODOParrot users can have many lists, and each list can have many tasks. These relations have been integrated into the `User`, `Task`, and `Todolist` models.
+* **Forms Integration**: The new Laravel 5 Form Request feature is used for creating new lists and tasks. Check out for instance how the `app/Http/Controllers/ListsController.php`, `app/Http/Requests/ListCreateFormRequest.php`, and `resources/views/lists/create.blade.php` files work together to add a new list to the database.
+* **Eloquent Integration**: The eloquent ORM is used to query and manage database data.
+* **Database Seeding**: Inside `database/seeds` you'll find a working seed example involving the `Category` model. This model and corresponding table aren't actually used yet, but they exist and the `CategoryTableSeeder.php` demonstrates how to seed the table.
+* **Model Methods**: I added a few helper methods to models to cut down on redundant code. For instance, the `Todolist` model includes a `remainingTasks` method used to easily determine how many incomplete tasks remain for a given list.
+* **User Authentication**: TODOParrot uses the sweet new Laravel 5 authentication features. Users can create a new account, sign in, sign out, and recover their password.
+* **Unit Testing**: You'll find a few simple test-related examples in the `tests` directory.
+* **Bootstrap Integration**: TODOParrot uses the Bootstrap framework and a modified [Bootswatch](http://bootswatch.com/) theme.
  
 ### TODOParrot is Not Production Ready
 
