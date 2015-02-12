@@ -1,20 +1,20 @@
 ## Welcome to TODOParrot
 
-TODOParrot ([http://todoparrot.com](http://todoparrot.com)) is the companion project to the book, *Easy Laravel 5* ([http://easylaravelbook.com](http://easylaravelbook.com)), written by bestselling author [W. Jason Gilmore](http://wjgilmore.com). Feel free to use this companion project as a learning aide; if you'd like to additionally take advantage of the book now you purchase it via [EasyLaravelBook.com](http://easylaravelbook.com), and receive free updates for life!
+TODOParrot ([http://todoparrot.com](http://todoparrot.com)) is the companion project to the book, *Easy Laravel 5* ([http://easylaravelbook.com](http://easylaravelbook.com)), written by bestselling author [W. Jason Gilmore](http://wjgilmore.com). Feel free to use this companion project as a learning aide; further, the book goes into great detail about many of the features found in this application. You can purchase it via [EasyLaravelBook.com](http://easylaravelbook.com), and receive free updates for life!
 
 ### Useful Features for Laravel Newbies 
 
 If you're new to Laravel I suggest paying particular attention to the following features:
 
-* Blade Templating: A simple master layout is used. Nothing new here but a useful example nonetheless.
-* Model Relations: TODOParrot users can have many lists, and each list can have many tasks. These relations have been integrated into the models.
-* Forms Integration: The new Laravel 5 Form Request feature is used for creating new lists and tasks. 
-* Database Queries: The various implemented queries are pretty basic but should provide Laravel newcomers with a few useful examples.
-* Model methods: I added a few helper methods to models to cut down on redundant code.
-* User Authentication: TODOParrot uses the sweet new Laravel 5 authentication features.
-* Unit Testing: Some simple test-related examples.
-* Bootstrap Integration: Because I can't even write my own name legibly let alone design a nice website, TODOParrot uses the Bootstrap framework.
-
+* Blade Templating: A simple master layout is used to wrap the application (`resources/views/layouts/master.blade.php`). Nothing particularly advanced here but a useful example nonetheless.
+* Model Relations: TODOParrot users can have many lists, and each list can have many tasks. These relations have been integrated into the `User`, `Task`, and `Todolist` models.
+* Forms Integration: The new Laravel 5 Form Request feature is used for creating new lists and tasks. Check out for instance how the `app/Http/Controllers/ListsController.php`, `app/Http/Requests/ListCreateFormRequest.php`, and `resources/views/lists/create.blade.php` files work together to add a new list to the database.
+* Eloquent: The eloquent ORM is used to query and manage database data.
+* Model methods: I added a few helper methods to models to cut down on redundant code. For instance, the `Todolist` model includes a `remainingTasks` method used to easily determine how many incomplete tasks remain for a given list.
+* User Authentication: TODOParrot uses the sweet new Laravel 5 authentication features. Users can create a new account, sign in, sign out, and recover their password.
+* Unit Testing: You'll find a few simple test-related examples in the `tests` directory.
+* Bootstrap Integration: TODOParrot uses the Bootstrap framework and a modified [Bootswatch](http://bootswatch.com/) theme.
+ 
 ### TODOParrot is Not Production Ready
 
 TODOParrot is *not a finished product*! I've been using the project as a testing ground for the various Laravel 5 features while writing *Easy Laravel 5*. Now that the book is published I've spent the last two days completely rewriting the code from the ground up. Future versions will include:
