@@ -1,10 +1,10 @@
 ## Welcome to TODOParrot
 
-TODOParrot ([http://www.todoparrot.com](http://www.todoparrot.com)) is the companion project to the book, *Easy Laravel 5* ([http://easylaravelbook.com](http://easylaravelbook.com)), written by bestselling author [W. Jason Gilmore](http://wjgilmore.com). Feel free to use this companion project as a learning aide; further, the book goes into great detail about many of the features found in this application. You can purchase it via [EasyLaravelBook.com](http://easylaravelbook.com), and receive free updates for life!
+TODOParrot ([http://www.todoparrot.com](http://www.todoparrot.com)) is the companion project to the book, *Easy Laravel 5* ([http://easylaravelbook.com](http://easylaravelbook.com)), written by bestselling author [W. Jason Gilmore](http://wjgilmore.com). Feel free to use the TODOParrot code as a learning aide, and if you'd like to learn even more about Laravel head on over to [EasyLaravelBook.com](http://easylaravelbook.com) and find out what the book has to offer!
 
 ### Useful Features for Laravel Newbies 
 
-If you're new to Laravel I suggest paying particular attention to the following features:
+If you're new to Laravel I suggest paying particular attention to the following TODOParrot features:
 
 * **Blade Templating**: A simple master layout is used to wrap the application (`resources/views/layouts/master.blade.php`). Nothing particularly advanced here but a useful example nonetheless.
 * **Model Relations**: TODOParrot users can have many lists, and each list can have many tasks. These relations have been integrated into the `User`, `Task`, and `Todolist` models.
