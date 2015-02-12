@@ -16,20 +16,20 @@ If you're new to Laravel I suggest paying particular attention to the following 
 * **Unit Testing**: You'll find a few simple test-related examples in the `tests` directory.
 * **Bootstrap Integration**: TODOParrot uses the Bootstrap framework and a modified [Bootswatch](http://bootswatch.com/) theme.
  
-### TODOParrot is Not Production Ready
+### TODOParrot is a Work in Progress
 
 As LinkedIn founder Reid Hoffman famously said, "If you are not embarrassed by the first version of your product, you've launched too late." TODOParrot was created solely with the intention of helping fellow developers get acquainted with Laravel 5 features and Laravel in general, so it's silly for me to not just release what's in place now because even if not finished there's still plenty to learn from.
 
 Future versions will include:
 
-* Less integration with Elixir: In the interests of time I just pushed my pre-existing Bootswatch template directly into `public/css`. Definitely want to take advantage of Elixir.
-* Route model binding: Route model binding is a much cleaner way to handle boilerplate tasks.
-* Much more testing: Plenty to do here
-* Additional account features: Account confirmation and password recovery, to name a few features.
-* User preferences: I'd like to add some simple customization capabilities such as e-mail notification when a task date expires.
-* An administration console: The console would allow administrators to view all user accounts and lists.
-* E-mail task due date reminders: Would e-mail users when a task due date nears.
-* SSL integration: I'm having some weird issue configuring Laravel and Heroku to use SSL.
+* LESS Integration with Elixir: In the interests of time I just pushed my pre-existing Bootswatch template directly into `public/css`. Definitely want to take advantage of Elixir.
+* Route Model Binding: Route model binding is a much cleaner way to handle boilerplate tasks.
+* Much More Testing: Plenty to do here
+* User Preferences: I'd like to add some simple customization capabilities such as e-mail notification when a task date expires.
+* An Administration Console: The console would allow administrators to view all user accounts and lists.
+* E-mail Task Reminders: Would e-mail users when a task due date nears using the command scheduler.
+* SSL Integration: I'm having some weird issue configuring Laravel and Heroku to use SSL.
+* A Command Bus Example: It would be cool to demonstrate how to create lists via e-mail.
 
 ### Installing TODOParrot
 
@@ -53,7 +53,7 @@ Next, seed the database:
 
 Finally, fire up the PHP development server (`php artisan serve`) or navigate to the appropriate Homestead URL and play around with the application!
 
-I'm still working on the unit tests however several are already in place. You can run them by executing the following command from the project root directory:
+I'm still working on the unit tests however several are already in place. If you'd like to run the tests you should first create a test database and then assign that name to the `phpunit.xml` `DB_DATABASE` environment variable. You can run them by executing the following command from the project root directory:
 
     $ vendor/bin/phpunit
 
