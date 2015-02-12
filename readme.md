@@ -12,6 +12,7 @@ If you're new to Laravel I suggest paying particular attention to the following 
 * **Eloquent Integration**: The eloquent ORM is used to query and manage database data.
 * **Database Seeding**: Inside `database/seeds` you'll find a working seed example involving the `Category` model. This model and corresponding table aren't actually used yet, but they exist and the `CategoryTableSeeder.php` demonstrates how to seed the table.
 * **Model Methods**: I added a few helper methods to models to cut down on redundant code. For instance, the `Todolist` model includes a `remainingTasks` method used to easily determine how many incomplete tasks remain for a given list.
+* **Custom Middleware**: The native `Authenticate` middleware is used in the application, as is a custom middleware named `ListOwnershipMiddleware.php`, which determines whether the current user is allowed to view and edit specified lists.
 * **User Authentication**: TODOParrot uses the sweet new Laravel 5 authentication features. Users can create a new account, sign in, sign out, and recover their password.
 * **Unit Testing**: You'll find a few simple test-related examples in the `tests` directory.
 * **Bootstrap Integration**: TODOParrot uses the Bootstrap framework and a modified [Bootswatch](http://bootswatch.com/) theme.
