@@ -14,6 +14,7 @@ class ListsController extends Controller {
 	public function __construct()
 	{
 		$this->middleware('auth');
+		$this->middleware('listowner', ['only' => ['show', 'edit', 'update']]);
 	}
 
 	public function index()
@@ -61,8 +62,7 @@ class ListsController extends Controller {
 	 */
 	public function show($id)
 	{
-
-		$list = Todolist::find($id);
+		$list = Todolist::findOrFail($id);
 		return view('lists.show')->withList($list);
 	}
 
@@ -73,7 +73,7 @@ class ListsController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $list = Todolist::find($id);
+        $list = Todolist::findOrFail($id);
         return view('lists.edit')->with('list', $list);
 	}
 
@@ -88,26 +88,16 @@ class ListsController extends Controller {
 
         $user = \Auth::user();
 
-        $list = Todolist::find($id);
+        $list = Todolist::findOrFail($id);
 
-        if ($user->owns($list->id))
-        {
+        $list->update([
+            'name' => $request->get('name'), 
+            'description' => $request->get('description')
+        ]);
 
-            $list->update([
-                'name' => $request->get('name'), 
-                'description' => $request->get('description')
-            ]);
-
-            return \Redirect::route('lists.edit', 
-                array($task->todolist->id))->with('message', 'Your list has been updated!');
-
-        } else {
-
-            return \Redirect::route('lists.index')
-                ->with('message', 'Permissions error!');
-        
-        }  
-
+        return \Redirect::route('lists.edit', 
+            array($task->todolist->id))->with('message', 'Your list has been updated!');
+ 
 	}
 
 	/**
@@ -120,16 +110,13 @@ class ListsController extends Controller {
 
         $user = \Auth::user();
 
-        $list = Todolist::find($id);
+        $list = Todolist::findOrFail($id);
 
-        if ($user->owns($list->id)) {
+        $list->delete();
 
-            $list->delete();
+        return \Redirect::route('lists.index')
+            ->with('message', 'Task deleted!');
 
-            return \Redirect::route('lists.index')
-                ->with('message', 'Task deleted!');
-
-        }
 
 	}
 

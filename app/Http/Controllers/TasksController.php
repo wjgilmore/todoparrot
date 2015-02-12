@@ -32,7 +32,7 @@ class TasksController extends Controller {
         $user = User::find(\Auth::id());
         if ($user->owns($listId))
         {
-            $list = Todolist::find($listId);
+            $list = Todolist::findOrFail($listId);
             return view('tasks.create')->with('list', $list);
         } else {
             
@@ -52,7 +52,7 @@ class TasksController extends Controller {
 
         if ($user->owns($listId)) {
 
-            $list = Todolist::find($listId);
+            $list = Todolist::findOrFail($listId);
 
             $task = new Task(array(
                 'name' => $request->get('name'),
@@ -95,7 +95,7 @@ class TasksController extends Controller {
     {
 
         $user = \Auth::user();
-        $task = Task::find($taskId);
+        $task = Task::findOrFail($taskId);
 
         if ($user->owns($task->todolist->id))
         {
@@ -151,9 +151,9 @@ class TasksController extends Controller {
 
         $user = \Auth::user();
 
-        $task = Task::find($taskId);
+        $task = Task::findOrFail($taskId);
 
-        $list = Todolist::find($task->todolist->id);
+        $list = Todolist::findOrFail($task->todolist->id);
 
         if ($user->owns($list->id)) {
 
@@ -178,7 +178,7 @@ class TasksController extends Controller {
     {
 
         $user = User::find(\Auth::id());
-        $list = Todolist::find($listId);
+        $list = Todolist::findOrFail($listId);
 
         if ($user->owns($listId)) {
 
