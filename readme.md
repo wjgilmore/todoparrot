@@ -67,6 +67,10 @@ Yep as long as you abide by the terms of the license.
 
 Yep. E-mail me at wj@wjgilmore.com.
 
+#### Do you offer book discounts?
+
+Sometimes. To celebrate the availability of this companion project, I've embedded this easter egg here, good for 20% off the book when purchasing via Gumroad or Leanpub. Use the code `easteregg` when checking out to receive the discount. Head over to [http://easylaravelbook.com](http://easylaravelbook.com) for more information about the book and for purchase links.
+
 #### Your code is just plain wrong
 
 That doesn't surprise me one bit. Send me a pull request.
