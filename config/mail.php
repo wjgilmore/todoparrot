@@ -54,7 +54,8 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 
+		env('EMAIL_FROM', 'todoparrot@example.com'), 'name' => env('EMAIL_NAME', 'TODOParrot')],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +94,7 @@ return [
 	|
 	*/
 
-	'password' => env('EMAIL_PASSWORD', 'password'),
+	'password' => env('EMAIL_PSWD', 'password'),
 
 	/*
 	|--------------------------------------------------------------------------
