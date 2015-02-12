@@ -12,7 +12,7 @@ Creating a TODOParrot account is free and easy. Once created, you'll be able to 
 
 @if (count($errors) > 0)
 	<div class="alert alert-danger">
-		<strong>Whoops!</strong> There were some problems with your input.<br><br>
+		There were some problems with your input.<br />
 		<ul>
 			@foreach ($errors->all() as $error)
 				<li>{{ $error }}</li>
