@@ -18,7 +18,9 @@ If you're new to Laravel I suggest paying particular attention to the following 
  
 ### TODOParrot is Not Production Ready
 
-TODOParrot is *not a finished product*! I've been using the project as a testing ground for the various Laravel 5 features while writing *Easy Laravel 5*. Now that the book is published I've spent the last two days completely rewriting the code from the ground up. Future versions will include:
+As LinkedIn founder Reid Hoffman famously said, "If you are not embarrassed by the first version of your product, you've launched too late." TODOParrot was created solely with the intention of helping fellow developers get acquainted with Laravel 5 features and Laravel in general, so it's silly for me to not just release what's in place now because even if not finished there's still plenty to learn from.
+
+Future versions will include:
 
 * Less integration with Elixir: In the interests of time I just pushed my pre-existing Bootswatch template directly into `public/css`. Definitely want to take advantage of Elixir.
 * Route model binding: Route model binding is a much cleaner way to handle boilerplate tasks.
@@ -27,6 +29,7 @@ TODOParrot is *not a finished product*! I've been using the project as a testing
 * User preferences: I'd like to add some simple customization capabilities such as e-mail notification when a task date expires.
 * An administration console: The console would allow administrators to view all user accounts and lists.
 * E-mail task due date reminders: Would e-mail users when a task due date nears.
+* SSL integration: I'm having some weird issue configuring Laravel and Heroku to use SSL.
 
 ### Installing TODOParrot
 
