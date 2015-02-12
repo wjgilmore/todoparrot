@@ -1,6 +1,6 @@
 ## Welcome to TODOParrot
 
-TODOParrot ([http://todoparrot.com](http://todoparrot.com)) is the companion project to the book, *Easy Laravel 5* ([http://easylaravelbook.com](http://easylaravelbook.com)), written by bestselling author [W. Jason Gilmore](http://wjgilmore.com). Feel free to use this companion project as a learning aide; further, the book goes into great detail about many of the features found in this application. You can purchase it via [EasyLaravelBook.com](http://easylaravelbook.com), and receive free updates for life!
+TODOParrot ([http://www.todoparrot.com](http://www.todoparrot.com)) is the companion project to the book, *Easy Laravel 5* ([http://easylaravelbook.com](http://easylaravelbook.com)), written by bestselling author [W. Jason Gilmore](http://wjgilmore.com). Feel free to use this companion project as a learning aide; further, the book goes into great detail about many of the features found in this application. You can purchase it via [EasyLaravelBook.com](http://easylaravelbook.com), and receive free updates for life!
 
 ### Useful Features for Laravel Newbies 
 
