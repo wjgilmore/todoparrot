@@ -40,9 +40,9 @@ To install TODOParrot you can clone the repository:
 
 Or if you're not familiar with Git (you really should [learn](https://try.github.io)), you can [download the zip file](https://github.com/wjgilmore/todoparrot/archive/master.zip). After downloading the file, unzip it to a convenient location.
 
-Next, enter the project's root directory and update the project dependencies:
+Next, enter the project's root directory and install the project dependencies:
 
-    $ composer update
+    $ composer install
 
 Next, configure your database (`config/database.php`). See Chapter 3 for more details about database configuration. Once complete, create the database and then run the migrations:
 
