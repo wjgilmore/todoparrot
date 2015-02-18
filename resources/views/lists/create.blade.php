@@ -24,7 +24,7 @@
 
 <div class="form-group">
     {!! Form::label('List Category') !!}<br />
-    {!! Form::select('category', array_merge(['' => 'Select a Category'], $categories), null, ['class' => 'form-control']) !!}
+    {!! Form::select('category', array_merge(['0' => 'Select a Category'], $categories), null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
