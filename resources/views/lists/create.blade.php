@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-6">
-{!! Form::open(array('route' => 'lists.store', 'class' => 'form')) !!}
+{!! Form::open(array('route' => 'lists.store', 'class' => 'form', 'novalidate' => 'novalidate')) !!}
     
 <h2>Create a TODO List</h2>
 
@@ -20,6 +20,11 @@
 <div class="form-group">
     {!! Form::label('Your List Name') !!}
     {!! Form::text('name', null, array('required', 'class'=>'form-control', 'placeholder'=>'List Name')) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('List Category') !!}<br />
+    {!! Form::select('category', array_merge(['' => 'Select a Category'], $categories), null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">

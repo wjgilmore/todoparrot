@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use Todoparrot\Todolist;
 use Todoparrot\User;
+use Todoparrot\Category;
 use Todoparrot\Http\Requests\ListCreateFormRequest;
 
 class ListsController extends Controller {
@@ -30,7 +31,9 @@ class ListsController extends Controller {
 	*/
 	public function create()
 	{
-		return view('lists.create');
+		$categories = \DB::table('categories')->lists('name', 'id');
+
+		return view('lists.create')->with('categories', $categories);
 	}
 
 	/**
@@ -45,6 +48,8 @@ class ListsController extends Controller {
 	      'name' => \Input::get('name'),
 	      'description' => \Input::get('description')
 	    ));
+
+	    $list->category()->associate(Category::find(\Input::get('category')));
 
 	    $user = User::find(\Auth::id());
 

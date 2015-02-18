@@ -23,6 +23,7 @@ class ListCreateFormRequest extends Request {
 	{
         return [
           'name' => 'required',
+          'category' => 'required',
           'description' => 'required'
         ];
 	}
