@@ -40,6 +40,15 @@ class Todolist extends Model {
     }
 
     /**
+     * Every list belongs to a Category
+     * 
+     */
+    public function Category()
+    {
+      return $this->belongsTo('Todoparrot\Category');
+    }
+
+    /**
     * Calculate the number of incomplete tasks
     *
     */
