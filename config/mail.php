@@ -15,7 +15,7 @@ return [
 	|
 	*/
 
-	'driver' => 'smtp',
+	'driver' => env('EMAIL_DRIVER'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,8 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => 
-		env('EMAIL_FROM', 'todoparrot@example.com'), 'name' => env('EMAIL_NAME', 'TODOParrot')],
+	'from' => ['address' => null, 'name' => null],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -81,7 +80,7 @@ return [
 	|
 	*/
 
-	'username' => env('EMAIL_USERNAME', 'username'),
+	'username' => null,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -94,7 +93,7 @@ return [
 	|
 	*/
 
-	'password' => env('EMAIL_PSWD', 'password'),
+	'password' => null,
 
 	/*
 	|--------------------------------------------------------------------------
