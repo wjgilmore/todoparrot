@@ -17,6 +17,11 @@ Route::get('/', ['as' => 'home', 'uses' => 'WelcomeController@index']);
 
 Route::get('about', 'AboutController@index');
 
+Route::get('contact', 
+  ['as' => 'contact', 'uses' => 'AboutController@create']);
+Route::post('contact', 
+  ['as' => 'contact_store', 'uses' => 'AboutController@store']);
+
 Route::resource('lists', 'ListsController');
 
 Route::resource('lists.tasks', 'TasksController');
