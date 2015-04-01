@@ -27,7 +27,8 @@ class Kernel extends HttpKernel {
 		'auth' => 'Todoparrot\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'Todoparrot\Http\Middleware\RedirectIfAuthenticated',
-		'listowner' => 'Todoparrot\Http\Middleware\ListOwnershipMiddleware'
+		'listowner' => 'Todoparrot\Http\Middleware\ListOwnershipMiddleware',
+		'admin' => 'Todoparrot\Http\Middleware\AdminAuthentication',
 	];
 
 }

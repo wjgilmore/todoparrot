@@ -22,6 +22,12 @@ Route::get('contact',
 Route::post('contact', 
   ['as' => 'contact_store', 'uses' => 'AboutController@store']);
 
+Route::group(['prefix' => 'admin', 'namespace' => 'admin', 'middleware' => 'admin'], 
+	function()
+	{
+	    Route::resource('user', 'UserController');
+	});
+
 Route::resource('lists', 'ListsController');
 
 Route::resource('lists.tasks', 'TasksController');
