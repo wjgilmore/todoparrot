@@ -45,11 +45,11 @@ class ListsController extends Controller {
 	{
 
 	    $list = new Todolist(array(
-	      'name' => \Input::get('name'),
-	      'description' => \Input::get('description')
+	      'name' => $request->get('name'),
+	      'description' => $request->get('description')
 	    ));
 
-	    $list->category()->associate(Category::find(\Input::get('category')));
+	    $list->category()->associate(Category::find($request->get('category')));
 
 	    $user = User::find(\Auth::id());
 
