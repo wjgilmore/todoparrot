@@ -23,13 +23,12 @@ As LinkedIn founder Reid Hoffman famously said, "If you are not embarrassed by t
 
 Future versions will include:
 
-* LESS Integration with Elixir: In the interests of time I just pushed my pre-existing Bootswatch template directly into `public/css`. Definitely want to take advantage of Elixir.
+* LESS Integration with Elixir: In the interests of time I just pushed my pre-existing Bootswatch template directly into `public/css`. Definitely want to take advantage of Elixir. NOTE: see [this starter project](http://www.easylaravelbook.com/projects/phpleaks/) for working example.
 * Route Model Binding: Route model binding is a much cleaner way to handle boilerplate tasks.
 * Much More Testing: Plenty to do here
 * User Preferences: I'd like to add some simple customization capabilities such as e-mail notification when a task date expires.
-* An Administration Console: The console would allow administrators to view all user accounts and lists.
+* ~~An Administration Console: The console would allow administrators to view all user accounts and lists.~~ DONE!
 * E-mail Task Reminders: Would e-mail users when a task due date nears using the command scheduler.
-* SSL Integration: I'm having some weird issue configuring Laravel and Heroku to use SSL.
 * A Command Bus Example: It would be cool to demonstrate how to create lists via e-mail.
 
 ### Installing TODOParrot
