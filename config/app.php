@@ -144,7 +144,7 @@ return [
 		'Todoparrot\Providers\ConfigServiceProvider',
 		'Todoparrot\Providers\EventServiceProvider',
 		'Todoparrot\Providers\RouteServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider',
+        'Collective\Html\HtmlServiceProvider',
 	],
 
 	/*
@@ -192,8 +192,8 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-        'HTML' => 'Illuminate\Html\HtmlFacade',
-        'Form' => 'Illuminate\Html\FormFacade'
+        'HTML' => 'Collective\Html\HtmlFacade',
+        'Form' => 'Collective\Html\FormFacade'
 
 	],
 
