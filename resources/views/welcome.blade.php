@@ -14,7 +14,28 @@
     @else
       <a href="{{ URL::route('lists.index') }}" class="btn btn-primary">View Your Lists</a>
     @endif
+
+    <p id="list_count">
+
+    </p>
+
   </div>
 </div>
 
-@stop
+    @section('footer_js')
+    <script>
+      $.ajax({
+        url: "http://status.todoparrot.com/lists/count",
+        dataType: 'jsonp',
+        crossDomain: true,
+        success: function(data) {
+          $('#list_count').html(data.count + " lists created!");
+        },
+        error: function(data) {
+          $('#list_count').html('Squawk!');
+        }
+      });
+    </script>
+    @endsection
+
+@endsection

@@ -70,6 +70,7 @@
     </div>
 
   </div>
+    @yield('footer_js')
 
 </body>
 </html>
