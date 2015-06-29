@@ -114,7 +114,8 @@ return [
 		 * Laravel Framework Service Providers...
 		 */
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
-		'Illuminate\Auth\AuthServiceProvider',
+    'Illuminate\Auth\AuthServiceProvider',
+    'Illuminate\Broadcasting\BroadcastServiceProvider', 
 		'Illuminate\Bus\BusServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
 		'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
