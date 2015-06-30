@@ -1,15 +1,10 @@
 $( document ).ready(function() {
 
-    var pusher = new Pusher('8943ce04cde9a06a18d1');
+    var pusher = new Pusher('YOUR_PUBLIC_PUSHER_KEY');
     var channel = pusher.subscribe('list-updates');
 
 	channel.bind('Todoparrot\\Events\\ListWasCreated', function(data) {
-	  //$('#pusher').html(data.message);
-	  alert(data.message);
+	  $('#pusher').html('New list created: ' + data.list.name);
 	});
 
 });
-
-// $(window).on('beforeunload', function(){
-//     socket.close();
-// });

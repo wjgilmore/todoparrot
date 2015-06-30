@@ -26,6 +26,6 @@ class LogMessageWhenListCreated
      */
     public function handle(ListWasCreated $event)
     {
-        return $event;
+        \Log::info("LIST CREATED {$event->list->id}");
     }
 }
