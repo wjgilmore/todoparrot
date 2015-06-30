@@ -1,6 +1,9 @@
 <?php namespace Todoparrot\Providers;
 
 use Illuminate\Support\ServiceProvider;
+// use Event;
+// use Todoparrot\Events\ListWasCreated;
+// use Todoparrot\Todolist;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -11,7 +14,9 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		// Todolist::created(function ($list) {
+        //   Event::fire(new ListWasCreated($list));
+        // });
 	}
 
 	/**

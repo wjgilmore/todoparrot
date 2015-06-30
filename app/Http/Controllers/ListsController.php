@@ -10,6 +10,9 @@ use Todoparrot\User;
 use Todoparrot\Category;
 use Todoparrot\Http\Requests\ListCreateFormRequest;
 
+use Event;
+use Todoparrot\Events\ListWasCreated;
+
 class ListsController extends Controller {
 
 	public function __construct()
@@ -54,6 +57,8 @@ class ListsController extends Controller {
 	    $user = User::find(\Auth::id());
 
 	    $list = $user->lists()->save($list);
+
+		Event::fire(new ListWasCreated($list));
 
 	    return \Redirect::route('lists.show', 
 	    	array($list->id))->with('message', 'Your list has been created!');

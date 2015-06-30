@@ -11,10 +11,10 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		'event.name' => [
-			'EventListener',
-		],
-	];
+    'Todoparrot\Events\ListWasCreated' => [
+      'Todoparrot\Listeners\LogMessageWhenListCreated'
+    ]
+  ];
 
 	/**
 	 * Register any other events for your application.

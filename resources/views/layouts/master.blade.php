@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
+  <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+  <script src="/js/pusher.js"></script>
   <link rel="stylesheet" href="/css/bootswatch.min.css">
   <link rel="stylesheet" href="/css/styles.css">
   @if(Route::currentRouteName() == 'home')
@@ -55,6 +56,9 @@
   <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
     <div class="row">
       <div class="col-md-12">
+
+        <div id="pusher"></div>
+
         @if(Session::has('message'))
             <div class="alert alert-info">
               {{Session::get('message')}}
