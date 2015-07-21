@@ -4,7 +4,7 @@ TODOParrot ([http://www.todoparrot.com](http://www.todoparrot.com)) is the compa
 
 ### Useful Features for Laravel Newbies
 
-If you're new to Laravel I suggest paying particular attention to the following TODOParrot features:
+If you're new to Laravel consider paying particular attention to the following TODOParrot features:
 
 * **Blade Templating**: A simple master layout is used to wrap the application (`resources/views/layouts/master.blade.php`). Nothing particularly advanced here but a useful example nonetheless.
 * **Model Relations**: TODOParrot users can have many lists, and each list can have many tasks. These relations have been integrated into the `User`, `Task`, and `Todolist` models.
