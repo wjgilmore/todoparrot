@@ -28,4 +28,13 @@ class ListCreateFormRequest extends Request {
         ];
 	}
 
+	public function messages()
+	{
+	    return [
+	        'name.required'  => 'Please assign a name to the list.',
+	        'category.required'       => 'Please assign a category to the list.',
+	        'description.required' => 'Please describe the list.'
+	    ];
+	}
+
 }
