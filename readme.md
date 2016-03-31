@@ -12,10 +12,10 @@ If you're new to Laravel consider paying particular attention to the following T
 * **Eloquent Integration**: The eloquent ORM is used to query and manage database data.
 * **Database Seeding**: Inside `database/seeds` you'll find a working seed example involving the `Category` model. This model and corresponding table aren't actually used yet, but they exist and the `CategoryTableSeeder.php` demonstrates how to seed the table.
 * **Model Methods**: I added a few helper methods to models to cut down on redundant code. For instance, the `Todolist` model includes a `remainingTasks` method used to easily determine how many incomplete tasks remain for a given list.
-* **Custom Middleware**: The native `Authenticate` middleware is used in the application, as is a custom middleware named `ListOwnershipMiddleware.php`, which determines whether the current user is allowed to view and edit specified lists.
+* **Custom Middleware**: The native `Authenticate` middleware is used in the application, as is a custom middleware named `ListOwnershipMiddleware.php`, which determines whether the current user is allowed to view and edit specified lists. Additional custom middleware (`AdminAuthentication.php`) is used to restrict access to the administration panel.
 * **User Authentication**: TODOParrot uses the sweet new Laravel 5 authentication features. Users can create a new account, sign in, sign out, and recover their password.
 * **Unit Testing**: You'll find a few simple test-related examples in the `tests` directory.
-* **Bootstrap Integration**: TODOParrot uses the Bootstrap framework and a modified [Bootswatch](http://bootswatch.com/) theme.
+* **Bootstrap Integration**: TODOParrot uses the Bootstrap framework and a modified [Bootswatch](http://bootswatch.com/) theme. Laravel Elixir is used to integrate Bootstrap via the npm `bootstrap-sass` module and easily override various stylings.
  
 ### TODOParrot is a Work in Progress
 
@@ -23,7 +23,7 @@ As LinkedIn founder Reid Hoffman famously said, "If you are not embarrassed by t
 
 Future versions will include:
 
-* LESS Integration with Elixir: In the interests of time I just pushed my pre-existing Bootswatch template directly into `public/css`. Definitely want to take advantage of Elixir. NOTE: see [this starter project](http://www.easylaravelbook.com/projects/phpleaks/) for working example.
+* ~~LESS Integration with Elixir: In the interests of time I just pushed my pre-existing Bootswatch template directly into `public/css`.~~ DONE!
 * Route Model Binding: Route model binding is a much cleaner way to handle boilerplate tasks.
 * Much More Testing: Plenty to do here
 * User Preferences: I'd like to add some simple customization capabilities such as e-mail notification when a task date expires.
@@ -83,5 +83,5 @@ That doesn't surprise me one bit. Send me a pull request.
 
 TODOParrot is licensed under the [MIT license](http://opensource.org/licenses/MIT). If you find something wrong with the code or think it could be improved, I welcome you to [create an issue](https://github.com/wjgilmore/todoparrot/issues) or submit a pull request!
 
-The home page image is copyright 2014 W. Jason Gilmore (wj@wjgilmore.com). It may not be used for any purpose without express written permission from its copyright holder. Also, please do not use the name TODOParrot. I kind of like it.
+The home page image is copyright 2014-2016 W. Jason Gilmore (wj@wjgilmore.com). It may not be used for any purpose without express written permission from its copyright holder. Also, please do not use the name TODOParrot. I kind of like it.
 
