@@ -3,7 +3,7 @@
 use Todoparrot\Http\Requests;
 use Todoparrot\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use Request;
 
 use Todoparrot\Todolist;
 use Todoparrot\User;
@@ -47,7 +47,7 @@ class TasksController extends Controller {
      */
     public function store($listId, TaskCreateFormRequest $request)
     {
-
+        
         $user = User::find(\Auth::id());
 
         if ($user->owns($listId)) {
@@ -62,13 +62,21 @@ class TasksController extends Controller {
 
             $task = $list->tasks()->save($task);
 
-            return \Redirect::route('lists.show', array($list->id))
-                ->with('message', 'Your task has been created!');
+            if ($request->ajax()) {
+                return response()->json(['message' => 'New task added!']);
+            } else {
+                return \Redirect::route('lists.show', array($list->id))
+                    ->with('message', 'Your task has been created!');
+            }
 
         } else {
 
-            return \Redirect::route('home')
-                ->with('message', 'Authorization error: you do not own this list.');
+            if ($request->ajax()) {
+                return response()->json(['message' => 'You do not own this list.']);
+            } else {
+                return \Redirect::route('home')
+                    ->with('message', 'Authorization error: you do not own this list.');
+            }
 
         }
 

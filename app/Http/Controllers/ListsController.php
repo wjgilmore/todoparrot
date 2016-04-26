@@ -3,7 +3,7 @@
 use Todoparrot\Http\Requests;
 use Todoparrot\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use Request;
 
 use Todoparrot\Todolist;
 use Todoparrot\User;
@@ -127,6 +127,22 @@ class ListsController extends Controller {
         return \Redirect::route('lists.index')
             ->with('message', 'Task deleted!');
 
+
+	}
+
+	public function tasks($listId) {
+
+		$list = Todolist::findOrFail($listId);
+
+		$user = User::find(\Auth::id());
+
+		if ($user->owns($listId)) {
+
+	        if (Request::ajax()) {
+	            return response()->json(['tasks' => $list->tasks]);
+	        }
+
+    	}
 
 	}
 

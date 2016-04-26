@@ -41,6 +41,8 @@ function()
     Route::resource('user', 'UserController');
 });
 
+Route::get('lists/{id}/tasks', 'ListsController@tasks');
+
 Route::resource('lists', 'ListsController');
 
 Route::resource('lists.tasks', 'TasksController');

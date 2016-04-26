@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-  <script src="//js.pusher.com/2.2/pusher.min.js"></script>
-  <script src="/js/pusher.js"></script>
+
   <link rel="stylesheet" href="/css/bootswatch.min.css">
   <link rel="stylesheet" href="/css/styles.css">
   @if(Route::currentRouteName() == 'home')
@@ -17,6 +16,12 @@
 	<style>
 		@import url(//fonts.googleapis.com/css?family=Lato:700);
 	</style>
+  <meta id="_token" value="{{ csrf_token() }}">
+
+  <script src="/js/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.js"></script>  
+  <script src="/js/mycode.js"></script>
+  
 </head>
 <body id="splash"> 
 
