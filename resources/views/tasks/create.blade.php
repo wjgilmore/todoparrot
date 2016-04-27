@@ -34,6 +34,10 @@
 
             <span id="ajax-response" v-if="ajaxRequest">Please Wait ...</span>
 
+            <ul v-for="(index, item) in errors">
+              <li>@{{ item }}</li>
+            </ul>
+
             <div class="form-group">
                 {!! Form::label('Task Name') !!}
                 {!! Form::text('name', null, ['v-model' => 'taskInfo.name', 'class' => 'form-control', 'placeholder' => 'Task Name']) !!}
@@ -59,7 +63,7 @@
 
                 <div id="task-list">
 
-                  <p v-for="task in tasks" track-by="$index">
+                  <p v-for="task in tasks">
                     <a href="/lists/@{{ listId }}/tasks/@{{ task.id }}/edit">@{{ task.name }}</a>
                   </p>
 
